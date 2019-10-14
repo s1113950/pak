@@ -1,9 +1,9 @@
 {
-  "app": "ppm",
-  "description": "Python Package Maker",
+  "app": "pak",
+  "description": "Python pAckage maKer",
   "author": "Steven Robertson",
   "email": "\"\"",
-  "url": "https://github.com/s1113950/ppm.git",
+  "url": "https://github.com/s1113950/pak.git",
   "outputdir": "/tmp",
   "package_data": "templates"
 }

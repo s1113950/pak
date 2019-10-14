@@ -1,4 +1,4 @@
-# PPM -- Python Package Maker
+# PAK -- Python Package Maker
 
 I usually start Python apps much the same way, so decided to make an app that would help create more apps.
 
@@ -10,7 +10,7 @@ Things it creates for you:
 5. MANIFEST.in
 
 ## Install
-`pip install ppm` -- `ppm` creates and publishes itself on `pypi`.
+`pip instalak` -- `pak` creates and publishes itself on `pypi`.
 
 ### Methodology
 
@@ -18,15 +18,15 @@ Things it creates for you:
 
 ### Configuration
 
-1. If you pass in a ppmconfig.json file to your `ppm` run or have the environment variable `PPMCONFIG` set, `ppm` will use that json file to answer its questions.
-2. ppmconfig.json format:
+1. If you pass in a pakconfig.json file to your `pak` run or have the environment variable `PAKCONFIG` set, `pak` will use that json file to answer its questions.
+2. pakconfig.json format:
 ```
 {
-  "app": "ppm",
+  "app": "pak",
   "description": "Python Package Maker",
   "author": "Steven Robertson",
   "email": "\"\"",
-  "url": "https://github.com/s1113950/ppm.git",
+  "url": "https://github.com/s1113950/pak.git",
   "outputdir": "/tmp",
   "package_data": "templates"
 }
@@ -35,7 +35,7 @@ To have an empty value type the empty string at the prompt provided.
 
 ### Usage
 ```
-usage: ppm [-h] [-c CONFIG] [-o]
+usage: pak [-h] [-c CONFIG] [-o]
 
 Python Package Maker. Creates an empty template of a ready-made python
 project.
@@ -43,7 +43,7 @@ project.
 optional arguments:
   -h, --help            show this help message and exit
   -c CONFIG, --config CONFIG
-                        Optional config; should be a ppmconfig.json file.
+                        Optional config; should be a pakconfig.json file.
   -o, --override        Whether or not to override existing files. Default is
                         False.
 ```

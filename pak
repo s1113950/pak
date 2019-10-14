@@ -10,7 +10,7 @@ import shutil
 from string import Template
 
 
-class Ppm():
+class Pak():
     def __init__(self):
         self.parse_args()
 
@@ -20,9 +20,9 @@ class Ppm():
 
         parser.add_argument(
             "-c", "--config",
-            default=os.environ.get('PPMCONFIG'),
+            default=os.environ.get('PAKCONFIG'),
             type=argparse.FileType('a+'),
-            help="Optional config; should be a ppmconfig.json file.")
+            help="Optional config; should be a pakconfig.json file.")
         parser.add_argument(
             "-o", "--override",
             default=False,
@@ -33,8 +33,8 @@ class Ppm():
 
     def _get_responses(self):
         """asks questions to the user for missing info not found in config"""
-        ppmfile = self.args.config or os.path.join(os.getcwd(), 'ppmconfig.json')
-        with open(ppmfile, 'a+') as json_file:
+        pakfile = self.args.config or os.path.join(os.getcwd(), 'pakconfig.json')
+        with open(pakfile, 'a+') as json_file:
             # move file pointer to the front of the file; opening with a+
             # allows reading from an empty file if the file doesn't already exist
             # and also writing to that same file. r+ would error if file not found
@@ -130,16 +130,16 @@ class Ppm():
                     shutil.rmtree(newpath)
                 cmd(f, newpath)
 
-        # in order to create ppm, need to copy ppm to the main.py file
-        if self.config['app'] == 'ppm':
+        # in order to create pak, need to copy pak to the main.py file
+        if self.config['app'] == 'pak':
             main_file = os.path.join(appdir, 'main.py')
             shutil.copy(__file__, main_file)
             os.chmod(main_file, 0o644)
 
 
 def main():
-    """Main entrypoint into ppm"""
-    Ppm().create_package()
+    """Main entrypoint into pak"""
+    Pak().create_package()
 
 
 if __name__ == '__main__':
