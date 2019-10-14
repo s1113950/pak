@@ -10,7 +10,7 @@ Things it creates for you:
 5. MANIFEST.in
 
 ## Install
-`pip instalak` -- `pak` creates and publishes itself on `pypi`.
+`pip install` -- `pak` creates and publishes itself on `pypi`.
 
 ### Methodology
 
