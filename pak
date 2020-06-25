@@ -69,7 +69,7 @@ class Pak():
                     question = question[:question.find(':')] + "[{}]".format(
                         self.config[option[0]]) + question[question.find(':'):]
 
-                self.config[option[0]] = input(question) or self.config.get(option[0])
+                self.config[option[0]] = input(question) or self.config.get(option[0], "")
 
             json_file.seek(0)
             json_file.truncate()
